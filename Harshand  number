@@ -1,0 +1,23 @@
+#include <stdio.h>
+int sum_of_digits(int num) {
+    int sum = 0;
+    while (num != 0) {
+        sum += num % 10;
+        num /= 10;
+    }
+    return sum;
+}
+
+int main() {
+    int number;
+    scanf("%d", &number);
+
+    int digit_sum = sum_of_digits(number);
+
+    if (digit_sum != 0 && number % digit_sum == 0)
+        printf("Harshad Number\n");
+    else
+        printf("Not Harshad Number\n");
+
+    return 0;
+}
